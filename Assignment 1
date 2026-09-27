@@ -1,0 +1,200 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ef75fd4e-5f10-44dc-b96d-231e20a203eb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original List: [10, 20, 30, 40, 50]\n",
+      "After append(60): [10, 20, 30, 40, 50, 60]\n",
+      "After insert(2, 25): [10, 20, 25, 30, 40, 50, 60]\n",
+      "After remove(40): [10, 20, 25, 30, 50, 60]\n",
+      "Popped element at index 1 (20): [10, 25, 30, 50, 60]\n",
+      "After reverse(): [60, 50, 30, 25, 10]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 1. Creation\n",
+    "my_list = [10, 20, 30, 40, 50]\n",
+    "print(\"Original List:\", my_list)\n",
+    "\n",
+    "# 2. Method 1: append() - Adding an element at the end\n",
+    "my_list.append(60)\n",
+    "print(\"After append(60):\", my_list)\n",
+    "\n",
+    "# 3. Method 2: insert() - Adding an element at a specific index\n",
+    "my_list.insert(2, 25)\n",
+    "print(\"After insert(2, 25):\", my_list)\n",
+    "\n",
+    "# 4. Method 3: remove() - Removing a specific element\n",
+    "my_list.remove(40)\n",
+    "print(\"After remove(40):\", my_list)\n",
+    "\n",
+    "# 5. Method 4: pop() - Removing element by index\n",
+    "popped_val = my_list.pop(1)\n",
+    "print(f\"Popped element at index 1 ({popped_val}):\", my_list)\n",
+    "\n",
+    "# 6. Method 5: reverse() - Reversing the list in-place\n",
+    "my_list.reverse()\n",
+    "print(\"After reverse():\", my_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "6e502716-a92f-41d4-bde6-ca542a7dbcaf",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original Tuple: (10, 20, 30, 20, 40, 50)\n",
+      "Count of 20 in tuple: 2\n",
+      "Index of 30 in tuple: 2\n",
+      "Length of tuple: 6\n",
+      "Concatenated Tuple: (10, 20, 30, 20, 40, 50, 60, 70)\n",
+      "Sliced Tuple [1:4]: (20, 30, 20)\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 1. Creation\n",
+    "my_tuple = (10, 20, 30, 20, 40, 50)\n",
+    "print(\"Original Tuple:\", my_tuple)\n",
+    "\n",
+    "# 2. Method 1: count() - Counting occurrences of a value\n",
+    "count_20 = my_tuple.count(20)\n",
+    "print(\"Count of 20 in tuple:\", count_20)\n",
+    "\n",
+    "# 3. Method 2: index() - Finding the index of an element\n",
+    "idx = my_tuple.index(30)\n",
+    "print(\"Index of 30 in tuple:\", idx)\n",
+    "\n",
+    "# 4. Method 3: len() - Getting length of tuple\n",
+    "print(\"Length of tuple:\", len(my_tuple))\n",
+    "\n",
+    "# 5. Method 4: Concatenation (+) - Combining tuples\n",
+    "new_tuple = my_tuple + (60, 70)\n",
+    "print(\"Concatenated Tuple:\", new_tuple)\n",
+    "\n",
+    "# 6. Method 5: Slicing [start:stop:step]\n",
+    "sliced_tuple = my_tuple[1:4]\n",
+    "print(\"Sliced Tuple [1:4]:\", sliced_tuple)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "2191a9a4-0c83-4931-a6ac-86c98bac77f0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original Dictionary: {'name': 'Alice', 'age': 20, 'course': 'Computer Science'}\n",
+      "Keys: ['name', 'age', 'course']\n",
+      "Values: ['Alice', 20, 'Computer Science']\n",
+      "Items: [('name', 'Alice'), ('age', 20), ('course', 'Computer Science')]\n",
+      "Get 'name': Alice\n",
+      "After update(): {'name': 'Alice', 'age': 21, 'course': 'Computer Science', 'city': 'Pune'}\n",
+      "After pop('course') [removed 'Computer Science']: {'name': 'Alice', 'age': 21, 'city': 'Pune'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 1. Creation\n",
+    "my_dict = {\"name\": \"Alice\", \"age\": 20, \"course\": \"Computer Science\"}\n",
+    "print(\"Original Dictionary:\", my_dict)\n",
+    "\n",
+    "# 2. Method 1: keys() - Getting all keys\n",
+    "print(\"Keys:\", list(my_dict.keys()))\n",
+    "\n",
+    "# 3. Method 2: values() - Getting all values\n",
+    "print(\"Values:\", list(my_dict.values()))\n",
+    "\n",
+    "# 4. Method 3: items() - Getting key-value pairs\n",
+    "print(\"Items:\", list(my_dict.items()))\n",
+    "\n",
+    "# 5. Method 4: get() - Accessing a value safely\n",
+    "print(\"Get 'name':\", my_dict.get(\"name\"))\n",
+    "\n",
+    "# 6. Method 5: update() / Adding & Modifying elements\n",
+    "my_dict.update({\"city\": \"Pune\", \"age\": 21})\n",
+    "print(\"After update():\", my_dict)\n",
+    "\n",
+    "# Removal operation using pop()\n",
+    "removed_val = my_dict.pop(\"course\")\n",
+    "print(f\"After pop('course') [removed '{removed_val}']:\", my_dict)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "4de7d229-4c09-4be6-827d-9489610fa272",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- 4. FAQ ANSWERS ---\n",
+      "Q1 Output (a[::2]): [1, 3, 5, 7, 9]\n",
+      "Q2 Output: ()\n"
+     ]
+    }
+   ],
+   "source": [
+    "# =========================================================\n",
+    "# PART 4: FAQ ANSWERS\n",
+    "# =========================================================\n",
+    "print(\"--- 4. FAQ ANSWERS ---\")\n",
+    "\n",
+    "# Q1: Slicing with step 2\n",
+    "a = [1, 2, 3, 4, 5, 6, 7, 8, 9]\n",
+    "print(\"Q1 Output (a[::2]):\", a[::2])\n",
+    "\n",
+    "# Q2: Tuple multiplication\n",
+    "l = [1, 2, 3]\n",
+    "init_tuple = ('Python',) * (l.__len__() - l[::-1][0])\n",
+    "print(\"Q2 Output:\", init_tuple)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f0df6c03-7e49-4877-bcc9-9a36c7208dce",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
