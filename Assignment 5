@@ -1,0 +1,206 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "7d38c0c6-a689-4333-bc6b-dc2c33d647f2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- CHARACTER SET CHECKER ---\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a string to test:  B\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "SUCCESS: 'B' contains ONLY valid characters (a-z, A-Z, 0-9).\n"
+     ]
+    }
+   ],
+   "source": [
+    "import re\n",
+    "\n",
+    "# Function to check if a string contains only a-z, A-Z, and 0-9\n",
+    "def check_character_set(user_str):\n",
+    "    # Pattern matches only alphanumeric characters from start to end\n",
+    "    pattern = r'^[a-zA-Z0-9]+$'\n",
+    "    \n",
+    "    if re.match(pattern, user_str):\n",
+    "        return True\n",
+    "    else:\n",
+    "        return False\n",
+    "\n",
+    "# --- Main Program Execution ---\n",
+    "print(\"--- CHARACTER SET CHECKER ---\")\n",
+    "\n",
+    "# Input: Accept string from user\n",
+    "input_string = input(\"Enter a string to test: \")\n",
+    "\n",
+    "# Function Calling & Output\n",
+    "if check_character_set(input_string):\n",
+    "    print(f\"SUCCESS: '{input_string}' contains ONLY valid characters (a-z, A-Z, 0-9).\")\n",
+    "else:\n",
+    "    print(f\"FAILURE: '{input_string}' contains invalid characters (spaces, special symbols, etc.).\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "d49ae091-a1fb-48a3-82d4-74951705b364",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- STRING OPERATIONS & IMMUTABILITY ---\n",
+      "Sliced string [0:6]: Python\n",
+      "Updated string: JythonProgramming\n",
+      "String successfully deleted with 'del'\n",
+      "\n",
+      "--- REGULAR EXPRESSIONS EXAMPLE ---\n",
+      "Numbers extracted using regex: ['123', '456']\n"
+     ]
+    }
+   ],
+   "source": [
+    "import re\n",
+    "\n",
+    "print(\"--- STRING OPERATIONS & IMMUTABILITY ---\")\n",
+    "\n",
+    "# 1. String Slicing\n",
+    "sample_str = \"PythonProgramming\"\n",
+    "print(\"Sliced string [0:6]:\", sample_str[0:6])\n",
+    "\n",
+    "# 2. String Immutability & Updating\n",
+    "# sample_str[0] = 'J'  <-- This raises TypeError because strings are immutable\n",
+    "# To \"update\", we create a new string:\n",
+    "updated_str = \"J\" + sample_str[1:]\n",
+    "print(\"Updated string:\", updated_str)\n",
+    "\n",
+    "# 3. Deleting a String\n",
+    "temp_str = \"Temporary Data\"\n",
+    "del temp_str\n",
+    "# print(temp_str)  <-- Raises NameError because temp_str is deleted\n",
+    "print(\"String successfully deleted with 'del'\")\n",
+    "\n",
+    "print(\"\\n--- REGULAR EXPRESSIONS EXAMPLE ---\")\n",
+    "text = \"Contact us at info123 or support456\"\n",
+    "# Find all numbers in the text using regex \\d+\n",
+    "numbers_found = re.findall(r'\\d+', text)\n",
+    "print(\"Numbers extracted using regex:\", numbers_found)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "e6583da9-b8c8-4c32-aa71-310b102a324e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "=================================================\n",
+      "                  FAQ ANSWERS                    \n",
+      "=================================================\n",
+      "Q1: String definition & creation\n",
+      "A string is a sequence of characters enclosed in single (' '), double (\" \"), or triple (''' ''') quotes.\n",
+      "Examples created: Hello World \n",
+      "\n",
+      "Q2: Valid character examples\n",
+      "Alphabets: 'a', 'Z'\n",
+      "Digits: '0', '9'\n",
+      "Combined string sample: 'Python3'\n",
+      "\n",
+      "Q3: Purpose of checking character sets\n",
+      "1. Data Validation: Ensures inputs like usernames, passwords, or registration IDs follow allowed formats.\n",
+      "2. Security: Prevents SQL injection and invalid character bugs.\n",
+      "\n",
+      "Q4: Methods to check for letters and numbers\n",
+      "1. string.isalnum() -> True\n",
+      "2. re.match('^[a-zA-Z0-9]+$', str) -> True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# =========================================================\n",
+    "# FAQ ANSWERS\n",
+    "# =========================================================\n",
+    "\n",
+    "print(\"=================================================\")\n",
+    "print(\"                  FAQ ANSWERS                    \")\n",
+    "print(\"=================================================\")\n",
+    "\n",
+    "# Q1: What is a string in Python? How do you create one?\n",
+    "print(\"Q1: String definition & creation\")\n",
+    "print(\"A string is a sequence of characters enclosed in single (' '), double (\\\" \\\"), or triple (''' ''') quotes.\")\n",
+    "str1 = 'Hello'\n",
+    "str2 = \"World\"\n",
+    "print(\"Examples created:\", str1, str2, \"\\n\")\n",
+    "\n",
+    "# Q2: What are characters in a string?\n",
+    "print(\"Q2: Valid character examples\")\n",
+    "print(\"Alphabets: 'a', 'Z'\")\n",
+    "print(\"Digits: '0', '9'\")\n",
+    "print(\"Combined string sample: 'Python3'\\n\")\n",
+    "\n",
+    "# Q3: Purpose of checking characters in a string\n",
+    "print(\"Q3: Purpose of checking character sets\")\n",
+    "print(\"1. Data Validation: Ensures inputs like usernames, passwords, or registration IDs follow allowed formats.\")\n",
+    "print(\"2. Security: Prevents SQL injection and invalid character bugs.\\n\")\n",
+    "\n",
+    "# Q4: Python functions/methods to check letters and numbers\n",
+    "print(\"Q4: Methods to check for letters and numbers\")\n",
+    "test_str = \"Python123\"\n",
+    "\n",
+    "# Method 1: isalnum() method\n",
+    "print(\"1. string.isalnum() ->\", test_str.isalnum())\n",
+    "\n",
+    "# Method 2: Regular Expressions re.match()\n",
+    "import re\n",
+    "print(\"2. re.match('^[a-zA-Z0-9]+$', str) ->\", bool(re.match(r'^[a-zA-Z0-9]+$', test_str)))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0b8d0dd4-d004-45c9-a68d-d29a513c3148",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
