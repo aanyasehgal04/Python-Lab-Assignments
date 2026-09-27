@@ -1,0 +1,195 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "9ad8ff41-20d7-461c-8a69-048aa5c37119",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- RIGHT-ANGLED TRIANGLE CHECKER ---\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter length of first side:  40\n",
+      "Enter length of second side:  30\n",
+      "Enter length of third side:  30\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The triangle with sides 40.0, 30.0, and 30.0 IS NOT a right-angled triangle.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Function to check if a triangle is right-angled using Pythagoras theorem\n",
+    "def is_right_angled(a, b, c):\n",
+    "    \"\"\"\n",
+    "    Checks if three sides form a right-angled triangle.\n",
+    "    Condition: (hypotenuse)^2 == (side1)^2 + (side2)^2\n",
+    "    \"\"\"\n",
+    "    # Sort the sides so the longest side is always at index 2\n",
+    "    sides = sorted([a, b, c])\n",
+    "    \n",
+    "    # Check Pythagoras theorem\n",
+    "    if (sides[0]**2 + sides[1]**2) == sides[2]**2:\n",
+    "        return True\n",
+    "    else:\n",
+    "        return False\n",
+    "\n",
+    "# --- Main Program Execution ---\n",
+    "print(\"--- RIGHT-ANGLED TRIANGLE CHECKER ---\")\n",
+    "\n",
+    "# Input: Accept three sides from the user\n",
+    "side1 = float(input(\"Enter length of first side: \"))\n",
+    "side2 = float(input(\"Enter length of second side: \"))\n",
+    "side3 = float(input(\"Enter length of third side: \"))\n",
+    "\n",
+    "# Function Calling\n",
+    "if is_right_angled(side1, side2, side3):\n",
+    "    print(f\"The triangle with sides {side1}, {side2}, and {side3} IS a right-angled triangle.\")\n",
+    "else:\n",
+    "    print(f\"The triangle with sides {side1}, {side2}, and {side3} IS NOT a right-angled triangle.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "f7ab84ce-4a23-43fa-a032-24524a1b0548",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- SYSTEM DEFINED FUNCTIONS ---\n",
+      "Built-in len(): 6\n",
+      "Built-in max(): 9\n",
+      "Built-in sum(): 23\n",
+      "\n",
+      "--- USER DEFINED FUNCTIONS ---\n",
+      "Calculated Area: 50\n"
+     ]
+    }
+   ],
+   "source": [
+    "# --- 1. SYSTEM DEFINED (BUILT-IN) FUNCTIONS ---\n",
+    "print(\"--- SYSTEM DEFINED FUNCTIONS ---\")\n",
+    "numbers = [3, 1, 4, 1, 5, 9]\n",
+    "\n",
+    "print(\"Built-in len():\", len(numbers))   # Built-in function to find length\n",
+    "print(\"Built-in max():\", max(numbers))   # Built-in function to find maximum value\n",
+    "print(\"Built-in sum():\", sum(numbers))   # Built-in function to calculate total\n",
+    "print()\n",
+    "\n",
+    "\n",
+    "# --- 2. USER DEFINED FUNCTIONS ---\n",
+    "print(\"--- USER DEFINED FUNCTIONS ---\")\n",
+    "\n",
+    "# Function Definition using 'def' keyword\n",
+    "def calculate_area(length, width):\n",
+    "    area = length * width\n",
+    "    return area\n",
+    "\n",
+    "# Function Calling\n",
+    "rect_area = calculate_area(10, 5)\n",
+    "print(\"Calculated Area:\", rect_area)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "077bdbfe-7d81-4c48-8215-fa3ee847e5ca",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Q1: What is a Function?\n",
+      "A function is a block of organized, reusable code used to perform a single related action.\n",
+      "\n",
+      "Q2: Is return value mandatory?\n",
+      "No, it is not mandatory. Functions without a return statement return 'None' by default.\n",
+      "   Inside a function with no explicit return.\n",
+      "   Function return value: None\n",
+      "\n",
+      "Q3: Standard Python Built-in Errors:\n",
+      "1. SyntaxError   - Raised when Python code is improperly formatted.\n",
+      "2. TypeError     - Raised when an operation is applied to an inappropriate type.\n",
+      "3. ValueError    - Raised when a function gets an argument of correct type but wrong value.\n",
+      "4. NameError     - Raised when a variable/function name is not found.\n",
+      "5. ZeroDivisionError - Raised when division by zero is performed.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# =========================================================\n",
+    "# FAQ ANSWERS\n",
+    "# =========================================================\n",
+    "\n",
+    "# Q1: What is a Function in Python Programming?\n",
+    "print(\"Q1: What is a Function?\")\n",
+    "print(\"A function is a block of organized, reusable code used to perform a single related action.\")\n",
+    "print()\n",
+    "\n",
+    "# Q2: Is it Mandatory for a Python Function to Return a Value?\n",
+    "print(\"Q2: Is return value mandatory?\")\n",
+    "print(\"No, it is not mandatory. Functions without a return statement return 'None' by default.\")\n",
+    "\n",
+    "def function_without_return():\n",
+    "    print(\"   Inside a function with no explicit return.\")\n",
+    "\n",
+    "result = function_without_return()\n",
+    "print(\"   Function return value:\", result)  # Output: None\n",
+    "print()\n",
+    "\n",
+    "# Q3: Name some standard Python errors?\n",
+    "print(\"Q3: Standard Python Built-in Errors:\")\n",
+    "print(\"1. SyntaxError   - Raised when Python code is improperly formatted.\")\n",
+    "print(\"2. TypeError     - Raised when an operation is applied to an inappropriate type.\")\n",
+    "print(\"3. ValueError    - Raised when a function gets an argument of correct type but wrong value.\")\n",
+    "print(\"4. NameError     - Raised when a variable/function name is not found.\")\n",
+    "print(\"5. ZeroDivisionError - Raised when division by zero is performed.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fe3804ce-2e5f-4e3d-952e-4c361a3869dc",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
