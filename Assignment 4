@@ -1,0 +1,302 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "61307752-4b6f-498c-9736-2db8d9eaac07",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- MATRIX ADDITION USING LISTS ---\n",
+      "Matrix A:\n",
+      "[1, 2, 3]\n",
+      "[4, 5, 6]\n",
+      "[7, 8, 9]\n",
+      "\n",
+      "Matrix B:\n",
+      "[9, 8, 7]\n",
+      "[6, 5, 4]\n",
+      "[3, 2, 1]\n",
+      "\n",
+      "Result (A + B using Lists):\n",
+      "[10, 10, 10]\n",
+      "[10, 10, 10]\n",
+      "[10, 10, 10]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# =========================================================\n",
+    "# PART 1: MATRIX ADDITION USING PYTHON LISTS (NESTED LISTS)\n",
+    "# =========================================================\n",
+    "\n",
+    "print(\"--- MATRIX ADDITION USING LISTS ---\")\n",
+    "\n",
+    "# Define two 3x3 matrices using lists\n",
+    "matrix_a = [\n",
+    "    [1, 2, 3],\n",
+    "    [4, 5, 6],\n",
+    "    [7, 8, 9]\n",
+    "]\n",
+    "\n",
+    "matrix_b = [\n",
+    "    [9, 8, 7],\n",
+    "    [6, 5, 4],\n",
+    "    [3, 2, 1]\n",
+    "]\n",
+    "\n",
+    "# Get dimensions (rows and columns)\n",
+    "rows = len(matrix_a)\n",
+    "cols = len(matrix_a[0])\n",
+    "\n",
+    "# Initialize result matrix with zeros\n",
+    "result_list = [[0 for _ in range(cols)] for _ in range(rows)]\n",
+    "\n",
+    "# Element-wise addition using nested loops\n",
+    "for i in range(rows):\n",
+    "    for j in range(cols):\n",
+    "        result_list[i][j] = matrix_a[i][j] + matrix_b[i][j]\n",
+    "\n",
+    "print(\"Matrix A:\")\n",
+    "for row in matrix_a:\n",
+    "    print(row)\n",
+    "\n",
+    "print(\"\\nMatrix B:\")\n",
+    "for row in matrix_b:\n",
+    "    print(row)\n",
+    "\n",
+    "print(\"\\nResult (A + B using Lists):\")\n",
+    "for row in result_list:\n",
+    "    print(row)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "13ed7627-5354-4b30-bcc6-d72a819e8370",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting numpy\n",
+      "  Downloading numpy-2.5.3-cp314-cp314-win_amd64.whl.metadata (6.6 kB)\n",
+      "Downloading numpy-2.5.3-cp314-cp314-win_amd64.whl (12.7 MB)\n",
+      "   ---------------------------------------- 0.0/12.7 MB ? eta -:--:--\n",
+      "   -------- ------------------------------- 2.6/12.7 MB 12.2 MB/s eta 0:00:01\n",
+      "   ----------------- ---------------------- 5.5/12.7 MB 13.0 MB/s eta 0:00:01\n",
+      "   ---------------------------- ----------- 8.9/12.7 MB 13.9 MB/s eta 0:00:01\n",
+      "   ----------------------------------- ---- 11.3/12.7 MB 13.0 MB/s eta 0:00:01\n",
+      "   ---------------------------------------- 12.7/12.7 MB 12.4 MB/s  0:00:01\n",
+      "Installing collected packages: numpy\n",
+      "Successfully installed numpy-2.5.3\n",
+      "--- MATRIX ADDITION USING LISTS ---\n",
+      "Result (A + B using Lists):\n",
+      "[10, 10, 10]\n",
+      "[10, 10, 10]\n",
+      "[10, 10, 10]\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "  WARNING: The scripts f2py.exe and numpy-config.exe are installed in 'C:\\Users\\AANYA\\AppData\\Local\\Python\\pythoncore-3.14-64\\Scripts' which is not on PATH.\n",
+      "  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n",
+      "\n",
+      "[notice] A new release of pip is available: 26.1.1 -> 26.2.1\n",
+      "[notice] To update, run: C:\\Users\\AANYA\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m pip install --upgrade pip\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Install numpy inside Jupyter Lab\n",
+    "!pip install numpy\n",
+    "\n",
+    "# Part 1: Matrix Addition using Lists\n",
+    "print(\"--- MATRIX ADDITION USING LISTS ---\")\n",
+    "\n",
+    "matrix_a = [\n",
+    "    [1, 2, 3],\n",
+    "    [4, 5, 6],\n",
+    "    [7, 8, 9]\n",
+    "]\n",
+    "\n",
+    "matrix_b = [\n",
+    "    [9, 8, 7],\n",
+    "    [6, 5, 4],\n",
+    "    [3, 2, 1]\n",
+    "]\n",
+    "\n",
+    "rows = len(matrix_a)\n",
+    "cols = len(matrix_a[0])\n",
+    "result_list = [[0 for _ in range(cols)] for _ in range(rows)]\n",
+    "\n",
+    "for i in range(rows):\n",
+    "    for j in range(cols):\n",
+    "        result_list[i][j] = matrix_a[i][j] + matrix_b[i][j]\n",
+    "\n",
+    "print(\"Result (A + B using Lists):\")\n",
+    "for row in result_list:\n",
+    "    print(row)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "a4987820-eb95-44c1-a26c-17540179ba56",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--- MATRIX ADDITION USING NUMPY ---\n",
+      "NumPy Array A:\n",
+      " [[1 2 3]\n",
+      " [4 5 6]\n",
+      " [7 8 9]]\n",
+      "\n",
+      "NumPy Array B:\n",
+      " [[9 8 7]\n",
+      " [6 5 4]\n",
+      " [3 2 1]]\n",
+      "\n",
+      "Result (A + B using NumPy):\n",
+      " [[10 10 10]\n",
+      " [10 10 10]\n",
+      " [10 10 10]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "print(\"--- MATRIX ADDITION USING NUMPY ---\")\n",
+    "\n",
+    "# Define two 3x3 matrices using NumPy arrays\n",
+    "np_a = np.array([\n",
+    "    [1, 2, 3],\n",
+    "    [4, 5, 6],\n",
+    "    [7, 8, 9]\n",
+    "])\n",
+    "\n",
+    "np_b = np.array([\n",
+    "    [9, 8, 7],\n",
+    "    [6, 5, 4],\n",
+    "    [3, 2, 1]\n",
+    "])\n",
+    "\n",
+    "# Direct element-wise addition in NumPy\n",
+    "result_np = np_a + np_b\n",
+    "\n",
+    "print(\"NumPy Array A:\\n\", np_a)\n",
+    "print(\"\\nNumPy Array B:\\n\", np_b)\n",
+    "print(\"\\nResult (A + B using NumPy):\\n\", result_np)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "a7e13b53-97e5-4712-b9d5-fc26217cde87",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "=================================================\n",
+      "                  FAQ ANSWERS                    \n",
+      "=================================================\n",
+      "Q1: What is a matrix?\n",
+      "A matrix is a 2D rectangular grid of numbers organized in rows and columns.\n",
+      "It can be represented using nested lists: matrix = [[1, 2], [3, 4]]\n",
+      "Or using NumPy arrays: np.array([[1, 2], [3, 4]])\n",
+      "\n",
+      "Q2: What is the condition for matrix addition?\n",
+      "Both matrices MUST have the exact same dimensions (same number of rows and columns).\n",
+      "\n",
+      "Q3: How do you access individual elements?\n",
+      "In Python Lists: sample_matrix[row_index][col_index]\n",
+      "Example element at row 0, col 1: 20\n",
+      "In NumPy: sample_np[row_index, col_index]\n",
+      "Example element at row 1, col 0: 30 \n",
+      "\n",
+      "Q4: General steps/logic to add matrices:\n",
+      "1. Check if dimensions of Matrix A and Matrix B are equal.\n",
+      "2. Create a result matrix of the same dimensions initialized to 0.\n",
+      "3. Iterate through each row 'i' and each column 'j'.\n",
+      "4. Set Result[i][j] = Matrix_A[i][j] + Matrix_B[i][j].\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "print(\"=================================================\")\n",
+    "print(\"                  FAQ ANSWERS                    \")\n",
+    "print(\"=================================================\")\n",
+    "\n",
+    "# Q1: What is a matrix? How can it be represented?\n",
+    "print(\"Q1: What is a matrix?\")\n",
+    "print(\"A matrix is a 2D rectangular grid of numbers organized in rows and columns.\")\n",
+    "print(\"It can be represented using nested lists: matrix = [[1, 2], [3, 4]]\")\n",
+    "print(\"Or using NumPy arrays: np.array([[1, 2], [3, 4]])\\n\")\n",
+    "\n",
+    "# Q2: Condition for two matrices to be added\n",
+    "print(\"Q2: What is the condition for matrix addition?\")\n",
+    "print(\"Both matrices MUST have the exact same dimensions (same number of rows and columns).\\n\")\n",
+    "\n",
+    "# Q3: Accessing individual elements of a 2D array\n",
+    "print(\"Q3: How do you access individual elements?\")\n",
+    "sample_matrix = [[10, 20], [30, 40]]\n",
+    "print(\"In Python Lists: sample_matrix[row_index][col_index]\")\n",
+    "print(\"Example element at row 0, col 1:\", sample_matrix[0][1])  # Output: 20\n",
+    "\n",
+    "sample_np = np.array([[10, 20], [30, 40]])\n",
+    "print(\"In NumPy: sample_np[row_index, col_index]\")\n",
+    "print(\"Example element at row 1, col 0:\", sample_np[1, 0], \"\\n\")  # Output: 30\n",
+    "\n",
+    "# Q4: General logic to add two matrices element-wise\n",
+    "print(\"Q4: General steps/logic to add matrices:\")\n",
+    "print(\"1. Check if dimensions of Matrix A and Matrix B are equal.\")\n",
+    "print(\"2. Create a result matrix of the same dimensions initialized to 0.\")\n",
+    "print(\"3. Iterate through each row 'i' and each column 'j'.\")\n",
+    "print(\"4. Set Result[i][j] = Matrix_A[i][j] + Matrix_B[i][j].\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "11721903-e7be-4672-a62d-86e8fa02bdc5",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
